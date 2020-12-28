@@ -1,0 +1,15 @@
+# Create a YAML file that contains a dictionary representing a networking
+# device (in an expanded YAML format). The highest level key should be the
+# device name (for example, "rtr1"). The value corresponding to that key
+# should be another dictionary. This inner dictionary should have the
+# following key-value pairs (host, username, password, device_type, use_session_log).
+# use_session_log should be a YAML-boolean, the rest of the values should be strings.
+# Use the "print_yaml.py" python script to print the contents of the YAmL file to stdout.
+
+---
+sea2-pr01:
+    host: host1
+    username: rugveda
+    password: not_password
+    device_type: cisco_ios
+    use_session_log: False

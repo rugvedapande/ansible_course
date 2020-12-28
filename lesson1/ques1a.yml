@@ -1,0 +1,7 @@
+# Create a YAML file that is a five element list (in expanded YAML format).
+---
+- one
+- two
+- three
+- four
+- five

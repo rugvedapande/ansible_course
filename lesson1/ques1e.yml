@@ -1,0 +1,25 @@
+# Create a YAML file that is a nested data structure. The highest level data
+# structure should be a dictionary with a key-name of "network_devices".
+# The value corresponding to this key should be a two-element list. Each element
+# of this list should contain a dictionary with six key-value pairs
+# (host, username, password, device_type, use_session_log, ip_addresses).
+# The ip_addresses key should point to a list of IP addresses that each network
+# device contains (just make up three IP addresses for each device).
+---
+network_devices:
+   - host: r1
+     username: bob
+     password: 123
+     device_type: cisco_ios
+     use_session_log: True
+     ip_addresses:
+     - 1.1.1.1
+     - 1.1.1.2
+   - host: r2
+     username: alice
+     password: 456
+     device_type: cisco_ios
+     use_session_log: True
+     ip_addresses:
+     - 2.2.2.2
+     - 2.2.2.3

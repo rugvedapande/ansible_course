@@ -1,0 +1,3 @@
+# Duplicate the dictionary created in the previous task except this time use the compressed YAML format.
+---
+{sea2-pr01:{host: host1,username: rugveda, password: not_password, device_type: cisco_ios, use_session_log: False}}

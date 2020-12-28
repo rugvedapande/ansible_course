@@ -1,0 +1,6 @@
+# 1b. Create a YAML file that is a five element list,
+# but in a compressed YAML format. Once again, use the "print_yaml.py"
+# python script to print the contents of the YAML file to stdout.
+
+---
+- ["one","two","three"]

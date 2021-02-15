@@ -1,17 +1,20 @@
 ---
+# First play to print localhost
 - name: Print localhost
   hosts: localhost
   gather_facts: False
   tasks:
     - debug:
         var: ansible_host
-- name: Print cisco group
+
+# Second play to print cisco information
+- name: Print cisco group information
   hosts: cisco
   gather_facts: False
   tasks:
     - debug:
-        var: ansible_host
+        var: ansible_connection
 
     - debug:
-        var: ansible_network_os
+        var: ansible_host
 

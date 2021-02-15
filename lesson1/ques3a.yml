@@ -1,0 +1,17 @@
+---
+- name: Print localhost
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        var: ansible_host
+- name: Print cisco group
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - debug:
+        var: ansible_host
+
+    - debug:
+        var: ansible_network_os
+

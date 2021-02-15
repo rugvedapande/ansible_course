@@ -1,0 +1,9 @@
+---
+- name: Question 2
+  hosts: cisco 
+  gather_facts: no 
+  tasks:
+    - name: Print BGP ASN for cisco hosts
+      debug: 
+        msg: "The ASN for host cisco2 is {{ bgp_asn  }}, the router-id is {{ bgp_router_id }}"
+     

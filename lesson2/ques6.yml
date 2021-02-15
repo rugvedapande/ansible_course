@@ -1,0 +1,15 @@
+---
+- name: Exercise 6
+  gather_facts: False
+  hosts: arista
+  tasks:
+    - name: Run eos_command
+      eos_command:
+        commands:
+          - "show ip arp"
+          - "show ip arp | json"
+      register: output
+
+    - name: print output
+      debug:
+        var: output

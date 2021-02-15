@@ -1,0 +1,32 @@
+---
+- name: Print arista5 facts
+  hosts: arista5
+  gather_facts: True
+  tasks:
+    - name: gather facts about the device
+      debug:
+        var: ansible_facts
+
+    - name: Print all IPV4 addresses
+      debug:
+        var: net_all_ipv4_addresses
+
+    - name: Print ansible_network_os
+      debug:
+        var: ansible_network_os
+
+    - name: Print ansible_host
+      debug:
+        var: ansible_host
+
+    - name: Print desired_eos_version
+      debug: 
+        var: desired_eos_version
+    
+    - name: set fact hostname
+      set_fact:
+        device_hostname: "{{ inventory_hostname }}.lab.io"
+    
+    - name: Print device_hostname
+      debug: 
+        var: device_hostname

@@ -1,0 +1,15 @@
+---
+- name: Exercise 3
+  hosts: nxos
+  gather_facts: no
+  tasks: 
+    - name: task to show version of nxos devices
+      nxos_command:
+        commands:
+          - show version
+          - show lldp neighbors
+      register: output 
+
+    - name: Print output 
+      debug:
+        var: output["stdout_lines"][1] 

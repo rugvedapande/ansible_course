@@ -1,0 +1,17 @@
+---
+- name: Exercise 5 
+  hosts: juniper
+  gather_facts: False
+  tasks:
+    - name: Execute commands
+      junos_command:
+        commands: "show interfaces terse"
+      register: interfaces
+
+    - name: Print full interface terse output
+      debug:
+        var: interfaces
+
+    - name: Print stdout_lines
+      debug:
+        msg: "Primary IP: {{ interfaces['stdout_lines'][0][21].split()[-1] }}" 

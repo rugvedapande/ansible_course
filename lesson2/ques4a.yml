@@ -1,0 +1,16 @@
+---
+- name: Exercise 4a
+  hosts: cisco6
+  gather_facts: no 
+  tasks:
+    - name: show version
+      ios_command:
+        commands:
+          - command: "clear logging"
+            prompt: confirm
+            answer: "\r"
+      register: output
+
+    - name: print version
+      debug:
+        var: output 

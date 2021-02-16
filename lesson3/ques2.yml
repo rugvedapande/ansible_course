@@ -1,0 +1,18 @@
+---
+- name: Exercise 2
+  gather_facts: no
+  hosts: nxos1
+  tasks:
+    - name: Show valns from switch 
+      nxos_command:
+        commands: "show vlan id {{ item }}"
+      register: vlans
+      loop:
+        - 1
+        - 2
+        - 3
+        - 4
+    - name: print output
+      debug: 
+        var: vlans["results"][3]
+      

@@ -1,0 +1,30 @@
+---
+- name: Exercise 1
+  gather_facts: no
+  hosts: arista:cisco:juniper
+  tasks:
+    - name: Talk to arista
+      eos_command:
+        commands: "show ip arp"
+      register: show_ip_arp_eos
+      when: ansible_network_os == "eos"
+      tags: ari
+
+    - name: Talk to cisco
+      ios_command:
+        commands: "show ip arp"
+      register: show_ip_arp_cisco
+      when: ansible_network_os == "ios"
+      tags: cis
+
+    - name: Talk to juniper
+      junos_command:
+        commands: "show arp"
+      register: show_arp_junos
+      when: ansible_network_os == "junos"
+      tags: jun
+
+    - name: print output
+      debug:
+        var: show_ip_arp_eos
+      when: ansible_network_os == "eos"

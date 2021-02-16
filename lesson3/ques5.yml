@@ -1,0 +1,9 @@
+---
+- name: Exercise 5
+  gather_facts: False
+  hosts: nxos
+  tasks:
+    - name: Run template module to jinja2 template
+      template:
+        src: templates/complete.j2
+        dest: "./configs/{{ inventory_hostname }}.txt"
